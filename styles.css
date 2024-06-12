@@ -1,0 +1,370 @@
+h1, h2, h3{
+    font-family: "Courier New", monospace;
+    font-smooth: never;
+    font-weight: 100;
+    color: white;
+}
+
+section{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+body {
+    margin: 10px;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden; /* Bloqueia o scroll horizontal em todo o documento */
+    overflow-y: hidden; /* Bloqueia o scroll horizontal em todo o documento */
+    
+    background-image: url("assets/background\ 3.gif");
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    position: relative; /* Adiciona position: relative para que o posicionamento absoluto funcione */
+}
+
+
+.muro{
+    width:100%;
+    z-index: 99999;
+    top: 60px;
+    height: 10px;
+    background-color: #0000008e;
+    position: absolute;
+    border: 4px solid #00000025; /* Cor da borda e largura */
+    box-shadow: 4px 4px 3px rgba(32, 32, 23, 232.1); /* horizontal offset, vertical offset, blur radius, color */
+
+}
+
+.pretinho{
+    position: absolute;
+    z-index: 9999999;
+    top: 12px;
+    width: 60px;
+    animation: moverParaFrente 40s linear infinite; /* 5 segundos de duração, movimento linear, repetir infinitamente */
+    cursor: pointer;
+
+}
+
+
+@keyframes moverParaFrente {
+    0% { left: 0; } /* posição inicial */
+    100% { left: calc(100% - 80px); } /* mover para a direita */
+}
+
+#inicio {
+    text-align: center;
+    background-color: #0000000e;
+    
+}
+
+.titulo {
+    margin-top: 20%;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.corpo{
+    margin-top: 50px;
+    display: block;
+    border: 1px solid #000; /* Cor da borda e largura */
+    background-image: url(assets/background.gif);
+    background-size: contain;
+    min-height: 900px;
+    box-shadow: 15px 15px 18px rgba(32, 32, 23, 232.1); /* horizontal offset, vertical offset, blur radius, color */
+    width: 100%;
+    
+}
+
+
+
+@keyframes anim-pixels {
+    from {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    to {
+      transform: translate(700px, 10px) rotate(360deg);
+    }
+  }
+
+
+  .layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Para ocultar pixels fora da área */
+  }
+
+  .pixel {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    opacity: 0.8; /* Transparência dos pixels */
+  }
+  
+
+
+  .corpo2 {
+    display: block;
+    border: 1px solid #000; /* Cor da borda e largura */
+    background-color: #000000b6;
+    background-size: contain;
+    height: 90vh; /* Ocupa 100% da altura da viewport */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+  
+}
+
+
+.botao-iniciar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700; /* Cor do botão */
+    color: #0D1117; /* Cor do texto do botão */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-iniciar:hover {
+    background-color: #FFA500; /* Cor do botão ao passar o mouse */
+}
+.rastro-mouse {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #FFFFFF; /* Cor da mira */
+    border-radius: 50%; /* Formato de círculo */
+    pointer-events: none; /* Não interfere com cliques */
+    z-index: 9999; /* Acima de todos os outros elementos */
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Efeito de transição suave */
+    transform: translate(-50%, -50%) scale(0); /* Inicia invisível e com escala 0 */
+    opacity: 0; /* Inicia invisível */
+}
+
+.rastro-mouse.mostrar {
+    transform: translate(-50%, -50%) scale(1); /* Torna visível e com escala 1 */
+    opacity: 1; /* Torna visível */
+}
+.mostrar-secao {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.esconder-secao {
+    opacity: 0;
+    transform: translateY(-100%);
+    display: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.escondido {
+    display: none;
+}
+
+.conteudo-centralizado {
+    display: flex;
+    height: 50vh;
+}
+
+.conteudo-centralizado-interno {
+    text-align: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+   
+
+}
+
+.mostrar-conteudo .conteudo-centralizado-interno {
+    opacity: 1; /* Torna visível ao mostrar */
+    display: block;
+}
+
+.perfil {
+    display: flex;
+    padding: 30px;
+    border-radius: 3%;
+    
+    
+}
+
+
+.foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    transition: transform 0.5s ease; /* Adicionando transição para suavizar a rotação */
+    transform-style: preserve-3d; /* Permite a aplicação de transformações 3D */
+    cursor: pointer;
+}
+
+.rotacionada {
+    transform: rotateY(180deg); /* Aplica a rotação na imagem */
+}
+
+
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informacoes {
+    flex: 1;
+    color: white; /* Adicionando a cor branca para o texto */
+}
+
+.informacoes h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white; /* Adicionando a cor branca para o texto */
+}
+
+.informacoes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.informacoes ul li {
+    margin-bottom: 25px;
+    color: white; /* Adicionando a cor branca para o texto */
+ 
+}
+ul li {
+    font-family: "Courier New", monospace;
+    font-smooth: never;
+}
+
+.linguagens-img{
+    margin: 30px;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d; /* Adicionando suporte a transformações 3D */
+}
+
+
+.right-corner {
+    top: 10px;
+    right: 10px;
+    transform: translate(-20%, -10%) rotateY(180deg) ; /* Rotaciona a imagem 45 graus no eixo X */
+  }
+  
+  .left-corner {
+    top: 10px;
+    left: 10px;
+    transform: translate(-20%, -10%) rotateY(180deg) r; /* Rotaciona a imagem 45 graus no eixo X */  }
+  
+  .hang {
+    top: 50%;
+    left: 50%;
+    transform: translate(-20, -13%) rotateX(180deg); /* Rotaciona a imagem 45 graus no eixo X */
+  }
+
+  .fall {
+    transition: all 5.5s ease;
+  
+    transform: translate(-20, -13%) rotateX(180deg); /* Rotaciona a imagem 45 graus no eixo X */
+
+  }
+  
+  
+.projetos-img{
+    border-radius: 2%;
+    cursor: pointer;
+    margin: 20px;
+}
+
+
+
+
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.square:hover {
+    background-color: #f0f0f0;
+}
+.message {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.reset-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.reset-button:hover {
+    background-color: #0056b3;
+}
+
+.projetos {
+    color: white;
+}
+
+.conhecimento {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conhecimento-item {
+    flex: 0 0 calc(50% - 20px); /* Divide em duas colunas e ajusta a largura com margem */
+    margin: 10px; /* Espaçamento entre os itens */
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.projetos-img {
+    width: 30%;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+ 
+}
+
+.projetos-img2{
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.projetos-img:hover {
+    transform: rotateX(calc(var(--mouse-y) * -100deg)) rotateY(calc(var(--mouse-x) * 100deg));
+}

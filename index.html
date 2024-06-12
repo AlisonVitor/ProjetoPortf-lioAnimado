@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_celular.css">
+</head>
+<body>
+  
+  
+
+<img class="pretinho" src="assets/pretinho.webp" alt="">
+<div class="muro"></div>
+
+    <div class="corpo">
+
+     <div class="corpo2">
+
+      <section id="inicio" class="mostrar-secao">
+        <h1 class="titulo">Bem-vindo ao meu Portfólio!</h1>
+        <h3>Por favor interaja com os conteudos do portfólio</h3>
+        <a href="#projetos" class="botao-iniciar">Iniciar</a>
+     </section>
+    
+     <section id="novo-conteudo" class="conteudo-centralizado escondido">
+      <div class="conteudo-centralizado-interno">
+          <div class="perfil">
+            <div class="foto" onclick="rotacionarImagem()">
+              <img src="assets/eu.jpeg" alt="Foto do personagem">
+          </div>
+        
+          
+              <div class="informacoes">
+                  <h2 style="text-align: justify;">Alison Maciel</h2>
+                  <ul style="text-align: justify;">
+                      <li><strong>Tempo de Experiência:</strong>8 anos</li>
+                      <li><strong>Formação:</strong>  ADS <br>  Pós Cyber Segurança <br> Pós inteligência Artificial </li>
+                      <li><strong>Quem Sou Eu:</strong>Sou um programador full-stack especializado no desenvolvimento web,<br> mobile e de software, com experiência significativa na área de inteligência artificial. Trabalhei com a Google em outro projeto, nos qual pude aprimorar minhas habilidades em desenvolvimento</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="habilidades">
+            <h3 style="color: white;">Habilidades</h3>
+            <div class="linguagens">
+                <img class="linguagens-img" src="assets/js.png" alt="Linguagem 1" width="80px">
+                <img class="linguagens-img" src="assets/phyton.png" alt="Linguagem 2" width="80px">
+                <img class="linguagens-img" src="assets/php.png" alt="Linguagem 2" width="90px">
+                <img class="linguagens-img" src="assets/android.png" alt="Linguagem 2" width="90px">
+                <!-- Adicione outras imagens das linguagens que você domina -->
+            </div>
+
+          
+      </div>
+      <div class="projetos">
+        <h3 style="color: white;">Conhecimento</h3>
+        <div class="conhecimento">
+            <div class="conhecimento-item">
+                <img class="projetos-img" src="assets/frontend.png" alt="Linguagem 1" width="20%">
+                <p>Como desenvolvedor front-end, meu foco principal está em criar interfaces de usuário visualmente atraentes e funcionais. Tenho experiência sólida em linguagens como HTML, CSS e JavaScript, que me permitem transformar designs em páginas web interativas e responsivas.</p>
+            </div>
+        
+            <div class="conhecimento-item">
+                <img class="projetos-img" src="assets/backend.png" alt="Linguagem 2" width="20%">
+                <p>Como desenvolvedor back-end, sou especializado na construção e otimização da parte não visível de um sistema, como o servidor, banco de dados e a lógica de negócios. Minhas habilidades se concentram em linguagens e tecnologias como Python, PHP, Java e bancos de dados SQL e NoSQL. </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+        <div class="projetos">
+            <h3 style="color: white;">Projetos</h3>
+            <div class="linguagens">
+               <a href="https://trendsi.com.br/" target="_blank" rel="noopener noreferrer"><img class="projetos-img2" src="assets/projeto1.png" alt="Linguagem 1" width="40%"></a> 
+               <a href="https://bodegadevinho.com.br/" target="_blank" rel="noopener noreferrer"><img class="projetos-img2" src="assets/projeto2.png" alt="Linguagem 2" width="40%"></a> 
+                <!-- Adicione outras imagens das linguagens que você domina -->
+            </div>
+       
+      </div>
+       </section>
+
+     </div>
+    </div>
+    </div>
+
+  </div>
+   
+
+
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython_stdlib.min.js"></script>
+    <script type="text/python" src="jogo_da_velha.py"></script>
+
+    <script>
+    function rotacionarImagem() {
+        const foto = document.querySelector('.foto');
+        foto.classList.toggle('rotacionada'); // Adiciona ou remove a classe 'rotacionada'
+    } 
+
+    </script>
+
+    <script src="script.js"></script>
+    <script src="script_troca_de_tela.js"></script>
+    <script>
+document.querySelectorAll('.projetos-img').forEach(img => {
+    img.addEventListener('mousemove', e => {
+        const rect = img.getBoundingClientRect();
+        const mouseX = (e.clientX - rect.left) / rect.width - 0.5;
+        const mouseY = (e.clientY - rect.top) / rect.height - 0.5;
+        img.style.setProperty('--mouse-x', mouseX);
+        img.style.setProperty('--mouse-y', mouseY);
+    });
+});
+
+
+    </script>
+</body>
+
+</html>
